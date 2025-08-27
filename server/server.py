@@ -10,8 +10,10 @@ app = QCoreApplication([])
 
 # Create TCP server and start listening
 server = QTcpServer()
-server.listen(QHostAddress.Any, 12345)
-
+ok = server.listen(QHostAddress.Any, 12345)
+if not ok:
+    print("Listen failed")
+    
 def on_new_connection():
     """Handle new client and print incoming text."""
     client = server.nextPendingConnection()

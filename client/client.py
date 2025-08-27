@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QTextEdit, QPushButton, QWidget, QVBoxLayout
-from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtNetwork import QTcpSocket
+import os
 
 """
 PyQt5 client GUI that connects to a TCP server (localhost:12345).
@@ -19,9 +19,19 @@ class MainWindow(QMainWindow):
       """Set up window, UI elements, and TCP connection."""
       super().__init__()
 
+      # Read host/port from environment variables with sensible defaults.
+      # In Docker Compose, you'll set SERVER_HOST=server (the service name).
+      server_host = os.getenv("SERVER_HOST", "localhost")
+      server_port = int(os.getenv("SERVER_PORT", "12345"))
+
       # TCP socket connection
       self.socket = QTcpSocket()
-      self.socket.connectToHost("localhost", 12345)
+      self.socket.connectToHost(server_host, server_port)
+
+      # wait a few seconds for the connection to establish
+      self.socket.waitForConnected(3000)
+      # print errors if the connection/socket fails
+      self.socket.errorOccurred.connect(lambda e: print("Socket error:", e))
 
       # Window setup
       self.setWindowTitle("Text 2 Image")
@@ -42,6 +52,9 @@ class MainWindow(QMainWindow):
          """Send current text to the server."""
          text = self.text_edit.toPlainText()
          self.socket.write(text.encode())
+         # Clear the QTextEdit
+         self.text_edit.clear()
+
 
       self.button.clicked.connect(on_click)
 

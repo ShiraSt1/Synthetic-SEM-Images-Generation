@@ -1,0 +1,21 @@
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: demo-server
+    ports:
+      - "12345:12345"
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: demo-client
+    depends_on:
+      - server
+    environment:
+      SERVER_HOST: server
+      SERVER_PORT: 12345
+    ports:
+      - "8080:8080"  
