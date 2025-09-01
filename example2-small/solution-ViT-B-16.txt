@@ -1,0 +1,17 @@
+=== OpenAI CLIP: ViT-B/16 ===
+      a diagram -> p=0.7856
+          a dog -> p=0.1986
+          a cat -> p=0.0105
+          a car -> p=0.0039
+       a person -> p=0.0010
+     a building -> p=0.0002
+
+=== OpenCLIP: ViT-B/16 (laion2b_s34b_b88k) ===
+      a diagram -> p=1.0000
+          a dog -> p=0.0000
+          a car -> p=0.0000
+          a cat -> p=0.0000
+     a building -> p=0.0000
+       a person -> p=0.0000
+
+BETTER: OpenCLIP
