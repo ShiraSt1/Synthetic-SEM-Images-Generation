@@ -12,6 +12,8 @@ from .registry import PROVIDERS
 # Side-effect imports: ensure adapters register themselves into PROVIDERS.
 from .adapters import mock
 from .adapters import llama 
+from .adapters import llama_emb
+from .adapters import nlp
 
 def _load_cfg() -> dict:
     """Collect minimal config from env with sensible defaults."""
