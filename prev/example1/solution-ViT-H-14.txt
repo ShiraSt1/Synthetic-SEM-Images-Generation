@@ -1,0 +1,166 @@
+Image #1: dog
+----------------------------------------------------------------------------------------------------
+[OpenCLIP ViT-H/14 laion2b_s32b_b79k] Top-5 (CPU):
+  a photo of a dog                    p=1.0000
+  a photo of a wolf                   p=0.0000
+  a photo of a cat                    p=0.0000
+  a photo of sushi                    p=0.0000
+  a photo of a fox                    p=0.0000
+  Confidence margin (p1-p2): 1.0000 | Entropy: -0.000
+Top-1 agreement: YES  |  OpenAI: a photo of a dog  |  OpenCLIP: a photo of a dog
+====================================================================================================
+Image #2: wolf
+----------------------------------------------------------------------------------------------------
+[OpenCLIP ViT-H/14 laion2b_s32b_b79k] Top-5 (CPU):
+  a computer keyboard                 p=0.9503
+  a cup of coffee                     p=0.0473
+  a mountain landscape                p=0.0015
+  a photo of a wolf                   p=0.0004
+  a photo of a fox                    p=0.0003
+  Confidence margin (p1-p2): 0.9030 | Entropy: 0.210
+Top-1 agreement: NO  |  OpenAI: a chair  |  OpenCLIP: a computer keyboard
+====================================================================================================
+Image #3: lion
+----------------------------------------------------------------------------------------------------
+[OpenCLIP ViT-H/14 laion2b_s32b_b79k] Top-5 (CPU):
+  a photo of a lion                   p=1.0000
+  a photo of a wolf                   p=0.0000
+  a photo of a cat                    p=0.0000
+  a photo of a fox                    p=0.0000
+  a photo of a dog                    p=0.0000
+  Confidence margin (p1-p2): 1.0000 | Entropy: -0.000
+Top-1 agreement: YES  |  OpenAI: a photo of a lion  |  OpenCLIP: a photo of a lion
+====================================================================================================
+Image #4: cat
+----------------------------------------------------------------------------------------------------
+[OpenCLIP ViT-H/14 laion2b_s32b_b79k] Top-5 (CPU):
+  a photo of a cat                    p=1.0000
+  a photo of sushi                    p=0.0000
+  a photo of a fox                    p=0.0000
+  a photo of a lion                   p=0.0000
+  a photo of a dog                    p=0.0000
+  Confidence margin (p1-p2): 1.0000 | Entropy: -0.000
+Top-1 agreement: YES  |  OpenAI: a photo of a cat  |  OpenCLIP: a photo of a cat
+====================================================================================================
+Image #5: car
+----------------------------------------------------------------------------------------------------
+[OpenCLIP ViT-H/14 laion2b_s32b_b79k] Top-5 (CPU):
+  a photo of a car                    p=1.0000
+  a photo of a bicycle                p=0.0000
+  a photo of a pizza                  p=0.0000
+  a photo of a truck                  p=0.0000
+  a photo of a bus                    p=0.0000
+  Confidence margin (p1-p2): 1.0000 | Entropy: -0.000
+Top-1 agreement: YES  |  OpenAI: a photo of a car  |  OpenCLIP: a photo of a car
+====================================================================================================
+Image #6: bus
+----------------------------------------------------------------------------------------------------
+[OpenCLIP ViT-H/14 laion2b_s32b_b79k] Top-5 (CPU):
+  a computer keyboard                 p=0.9503
+  a cup of coffee                     p=0.0473
+  a mountain landscape                p=0.0015
+  a photo of a wolf                   p=0.0004
+  a photo of a fox                    p=0.0003
+  Confidence margin (p1-p2): 0.9030 | Entropy: 0.210
+Top-1 agreement: NO  |  OpenAI: a chair  |  OpenCLIP: a computer keyboard
+====================================================================================================
+Image #7: truck
+----------------------------------------------------------------------------------------------------
+[OpenCLIP ViT-H/14 laion2b_s32b_b79k] Top-5 (CPU):
+  a photo of a fox                    p=0.9790
+  a photo of a wolf                   p=0.0109
+  an illustration                     p=0.0065
+  a photo of a dog                    p=0.0017
+  a photo of a cat                    p=0.0007
+  Confidence margin (p1-p2): 0.9681 | Entropy: 0.129
+Top-1 agreement: NO  |  OpenAI: a photo of a wolf  |  OpenCLIP: a photo of a fox
+====================================================================================================
+Image #8: pizza
+----------------------------------------------------------------------------------------------------
+[OpenCLIP ViT-H/14 laion2b_s32b_b79k] Top-5 (CPU):
+  a photo of a pizza                  p=1.0000
+  a photo of a burger                 p=0.0000
+  a photo of sushi                    p=0.0000
+  a photo of a dog                    p=0.0000
+  a photo of a lion                   p=0.0000
+  Confidence margin (p1-p2): 1.0000 | Entropy: -0.000
+Top-1 agreement: YES  |  OpenAI: a photo of a pizza  |  OpenCLIP: a photo of a pizza
+====================================================================================================
+Image #9: burger
+----------------------------------------------------------------------------------------------------
+[OpenCLIP ViT-H/14 laion2b_s32b_b79k] Top-5 (CPU):
+  a photo of a burger                 p=1.0000
+  a photo of a pizza                  p=0.0000
+  a photo of sushi                    p=0.0000
+  a photo of a truck                  p=0.0000
+  a photo of a bicycle                p=0.0000
+  Confidence margin (p1-p2): 1.0000 | Entropy: -0.000
+Top-1 agreement: YES  |  OpenAI: a photo of a burger  |  OpenCLIP: a photo of a burger
+====================================================================================================
+Image #10: sushi
+----------------------------------------------------------------------------------------------------
+[OpenCLIP ViT-H/14 laion2b_s32b_b79k] Top-5 (CPU):
+  a photo of sushi                    p=1.0000
+  a photo of a pizza                  p=0.0000
+  a photo of a burger                 p=0.0000
+  a photo of a truck                  p=0.0000
+  a photo of a dog                    p=0.0000
+  Confidence margin (p1-p2): 1.0000 | Entropy: -0.000
+Top-1 agreement: YES  |  OpenAI: a photo of sushi  |  OpenCLIP: a photo of sushi
+====================================================================================================
+Image #11: shoe
+----------------------------------------------------------------------------------------------------
+[OpenCLIP ViT-H/14 laion2b_s32b_b79k] Top-5 (CPU):
+  a shoe                              p=1.0000
+  a photo of a car                    p=0.0000
+  a photo of sushi                    p=0.0000
+  a laptop computer                   p=0.0000
+  a watch                             p=0.0000
+  Confidence margin (p1-p2): 1.0000 | Entropy: 0.000
+Top-1 agreement: YES  |  OpenAI: a shoe  |  OpenCLIP: a shoe
+====================================================================================================
+Image #12: mountain
+----------------------------------------------------------------------------------------------------
+[OpenCLIP ViT-H/14 laion2b_s32b_b79k] Top-5 (CPU):
+  a mountain landscape                p=0.9998
+  a photo of a bicycle                p=0.0002
+  a photo of a fox                    p=0.0000
+  a photo of a wolf                   p=0.0000
+  a photo of sushi                    p=0.0000
+  Confidence margin (p1-p2): 0.9996 | Entropy: 0.002
+Top-1 agreement: YES  |  OpenAI: a mountain landscape  |  OpenCLIP: a mountain landscape
+====================================================================================================
+Image #13: laptop
+----------------------------------------------------------------------------------------------------
+[OpenCLIP ViT-H/14 laion2b_s32b_b79k] Top-5 (CPU):
+  a laptop computer                   p=1.0000
+  a computer keyboard                 p=0.0000
+  a photo of sushi                    p=0.0000
+  a photo of a burger                 p=0.0000
+  a photo of a cat                    p=0.0000
+  Confidence margin (p1-p2): 1.0000 | Entropy: 0.000
+Top-1 agreement: YES  |  OpenAI: a laptop computer  |  OpenCLIP: a laptop computer
+====================================================================================================
+Image #14: keyboard
+----------------------------------------------------------------------------------------------------
+[OpenCLIP ViT-H/14 laion2b_s32b_b79k] Top-5 (CPU):
+  a laptop computer                   p=1.0000
+  a computer keyboard                 p=0.0000
+  a photo of sushi                    p=0.0000
+  a photo of a burger                 p=0.0000
+  a photo of a cat                    p=0.0000
+  Confidence margin (p1-p2): 1.0000 | Entropy: 0.000
+Top-1 agreement: YES  |  OpenAI: a laptop computer  |  OpenCLIP: a laptop computer
+====================================================================================================
+Image #15: diagram
+----------------------------------------------------------------------------------------------------
+[OpenCLIP ViT-H/14 laion2b_s32b_b79k] Top-5 (CPU):
+  a diagram                           p=0.9876
+  a chart                             p=0.0114
+  a photo of a dog                    p=0.0010
+  a photo of a cat                    p=0.0000
+  a photo of sushi                    p=0.0000
+  Confidence margin (p1-p2): 0.9762 | Entropy: 0.070
+Top-1 agreement: YES  |  OpenAI: a diagram  |  OpenCLIP: a diagram
+====================================================================================================
+Overall Top-1 agreement across 15 images: 80.0%

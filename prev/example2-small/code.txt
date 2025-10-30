@@ -1,0 +1,73 @@
+python - << 'PY'
+import os, io, torch
+from PIL import Image, ImageDraw, ImageFont
+
+def try_load_demo_image():
+    try:
+        import requests
+        url = "https://raw.githubusercontent.com/openai/CLIP/main/CLIP.png"
+        r = requests.get(url, timeout=10)
+        r.raise_for_status()
+        return Image.open(io.BytesIO(r.content)).convert("RGB")
+    except Exception:
+        # Fallback: create image with text "diagram"
+        img = Image.new("RGB", (512, 512), (255, 255, 255))
+        d = ImageDraw.Draw(img)
+        txt = "diagram"
+        try:
+            # default font
+            font = ImageFont.load_default()
+        except Exception:
+            font = None
+        w, h = d.textlength(txt, font=font), 12
+        d.text(((512-w)//2, (512-h)//2), txt, fill=(0,0,0), font=font)
+        # draw few shapes
+        d.rectangle([60, 60, 452, 452], outline=(0,0,0), width=4)
+        d.line([60, 60, 452, 452], fill=(0,0,255), width=4)
+        d.line([452, 60, 60, 452], fill=(255,0,0), width=4)
+        return img
+
+device = "cuda" if torch.cuda.is_available() else "cpu"
+print(f"Device: {device}")
+if torch.cuda.is_available():
+    print("GPU:", torch.cuda.get_device_name(0))
+
+# --- part A: OpenAI CLIP ViT-B/16 ---
+print("\n=== OpenAI CLIP: ViT-B/16 ===")
+import clip
+model_oa, preprocess_oa = clip.load("ViT-B/16", device=device)
+model_oa.eval()
+
+image = preprocess_oa(try_load_demo_image()).unsqueeze(0).to(device)
+labels = ["a diagram", "a dog", "a cat", "a car", "a person", "a building"]
+text_oa = clip.tokenize(labels).to(device)
+
+with torch.no_grad():
+    logits_img_oa, _ = model_oa(image, text_oa)  # scaled cosine x100
+    probs_oa = logits_img_oa.softmax(dim=-1).squeeze(0).cpu().tolist()
+
+for p, t in sorted(zip(probs_oa, labels), reverse=True):
+    print(f"{t:>15} -> p={p:.4f}")
+
+# --- part B: OpenCLIP ViT-B/16 ---
+print("\n=== OpenCLIP: ViT-B/16 (laion2b_s34b_b88k) ===")
+import open_clip
+model_oc, _, preprocess_oc = open_clip.create_model_and_transforms(
+    'ViT-B-16', pretrained='laion2b_s34b_b88k', device=device
+)
+tokenizer = open_clip.get_tokenizer('ViT-B-16')
+
+image2 = preprocess_oc(try_load_demo_image()).unsqueeze(0).to(device)
+text_oc = tokenizer(labels)
+
+with torch.no_grad():
+    img_feat = model_oc.encode_image(image2)
+    txt_feat = model_oc.encode_text(text_oc.to(device))
+    logits = img_feat @ txt_feat.T             # cosine-like similarity
+    probs_oc = logits.softmax(dim=-1).squeeze(0).cpu().tolist()
+
+for p, t in sorted(zip(probs_oc, labels), reverse=True):
+    print(f"{t:>15} -> p={p:.4f}")
+
+print("\nDone.")
+PY

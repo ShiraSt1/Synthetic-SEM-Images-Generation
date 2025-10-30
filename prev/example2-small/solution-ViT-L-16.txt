@@ -1,0 +1,24 @@
+open_clip_model.safetensors: 100%|█████████████████████████████████████████████████| 3.53G/3.53G [05:04<00:00, 11.6MB/s]
+tokenizer_config.json: 46.4kB [00:00, 69.9MB/s]
+tokenizer.json: 100%|██████████████████████████████████████████████████████████████| 34.4M/34.4M [00:03<00:00, 10.9MB/s]
+special_tokens_map.json: 100%|█████████████████████████████████████████████████████████| 327/327 [00:00<00:00, 1.63MB/s]
+
+=== SigLIP2 ViT-L/16 @256 | weights: webli | device: cuda ===
+      a diagram -> p=1.0000
+       a person -> p=0.0000
+          a cat -> p=0.0000
+          a dog -> p=0.0000
+     a building -> p=0.0000
+          a car -> p=0.0000
+open_clip_model.safetensors: 100%|█████████████████████████████████████████████████| 3.53G/3.53G [05:04<00:00, 11.6MB/s]
+tokenizer_config.json: 46.4kB [00:00, 80.7MB/s]
+tokenizer.json: 100%|██████████████████████████████████████████████████████████████| 34.4M/34.4M [00:03<00:00, 11.0MB/s]
+special_tokens_map.json: 100%|█████████████████████████████████████████████████████████| 327/327 [00:00<00:00, 1.73MB/s]
+
+=== SigLIP2 ViT-L/16 @384 | weights: webli | device: cuda ===
+      a diagram -> p=1.0000
+          a dog -> p=0.0000
+       a person -> p=0.0000
+          a cat -> p=0.0000
+     a building -> p=0.0000
+          a car -> p=0.0000
