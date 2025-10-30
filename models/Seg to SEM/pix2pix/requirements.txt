@@ -1,0 +1,11 @@
+torch
+torchvision
+pillow
+numpy
+opencv-python
+tqdm
+dominate
+lpips
+scikit-image
+matplotlib
+wandb
