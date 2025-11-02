@@ -1,0 +1,16 @@
+# === Base config for pix2pix SEM (edges -> overlay) ===
+input_dataset: "yealsh/canny2segmentation-dataset"
+kaggle_secret_dataset: "yealsh/kaggle-json-secret"
+checkpoints_dataset_slug: "edgeseg-pix2pix-ckpts"
+outputs_dataset_slug: "edgeseg-pix2pix-outputs"
+
+img_size: 256
+batch_size: 8
+max_epochs: 150
+lr_g: 0.0002
+lr_d: 0.0002
+lambda_l1: 100
+seed: 42
+
+export_ckpt_every_steps: 200
+export_samples_every_epochs: 5
