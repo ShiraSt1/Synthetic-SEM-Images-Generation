@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+.env/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Checkpoints & outputs (kept via Kaggle datasets, not in Git)
+CKPTS/
+EXPORT/
+RESUME/
+*.pt
+*.ckpt
+*.zip
+
+# Jupyter
+.ipynb_checkpoints/
