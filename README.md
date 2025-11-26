@@ -1,24 +1,53 @@
-# SemTTI
+# SEG2SEM
 
-A simple client-server demo application using **PyQt5** and **TCP sockets**.  
-The project demonstrates sending text from a GUI client to a TCP server, which receives and prints the messages.  
-It can serve as a foundation for more advanced applications such as text-to-image systems, chat apps, or other socket-based communication tools.
+A simple research-focused demo application for converting **SEM images ↔ segmentation masks** and generating **synthetic SEM images** using deep-learning models.  
+The project demonstrates a full workflow including data preprocessing, segmentation generation, model training, and image-to-image inference.  
+It can serve as a foundation for more advanced generative pipelines, dataset expansion tools, or image-to-image research applications.
 
 ---
 
 ## Features
-- **GUI Client (PyQt5)** – User-friendly interface with text input and a button.  
-- **TCP Communication** – Client connects to a server via TCP on port `12345`.  
-- **Server** – Listens for incoming client connections and prints received text.  
-- **Extensible** – Easy to extend for more complex protocols or additional functionality.  
+- **Seg → SEM Generation** – Create synthetic SEM images from segmentation masks.  
+- **SEM → Seg Generation (SAM2)** – Automatic segmentation of SEM images using SAM2 notebooks.  
+- **Multiple Models** –  
+  - **Pix2Pix** (paired)  
+  - **CycleGAN** (unpaired)  
+  - **Canny2Seg** preprocessing pipeline  
+- **Training & Inference Notebooks** – Full Kaggle-ready notebooks for training, exporting to ONNX, and evaluating results.  
+- **Extensible Architecture** – Modular structure that allows easy editing, retraining, and model replacement.  
 
 ---
 
 ## Project Structure
-The project contains the following files:
-- **client.py** – The graphical client application. 
-Opens a PyQt5 window where the user can type text and send it to the server.  
-- **server.py** – The TCP server. Listens on port `12345`, 
-receives text from clients, and prints it to the console.  
-- **README.md** – This documentation file. 
-Explains installation, usage, and project details.  
+The project contains the following directories and files:
+
+- **client/**  
+  PyQt5 client application for loading input images and running inference using trained models.
+
+- **server/**  
+  Backend service used to handle inference requests and model execution.
+
+- **models/**  
+  Contains all model-related workflows:  
+  - **canny2seg/** –  
+    Preprocessing and model utilities for converting Canny edges into segmentation maps.  
+  - **Seg to SEM/** –  
+    - **CycleGAN/** (checkpoints, examples, notebooks)  
+    - **pix2pix/** (training scripts, ONNX export, examples, notebooks)  
+  - **SEM to Seg/** –  
+    SAM2-based segmentation notebooks for generating segmentation masks from SEM images.
+
+- **prev/**  
+  Additional or older experiments, previous model versions, or archived utilities.
+
+- **docker-compose.yml**  
+  Docker configuration for running the client/server environment.
+
+- **.gitignore, .gitattributes, .dockerignore**  
+  Git and Docker configuration files.
+
+- **README.md**  
+  This documentation file.  
+  Explains project purpose, structure, and usage details.
+
+---
